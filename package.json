@@ -1,7 +1,7 @@
 {
   "name": "ngx-g2",
   "version": "0.0.0",
-  "description": "",
+  "description": "g2 component for angular",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
