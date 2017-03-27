@@ -28,7 +28,7 @@ export class AppModule { }
 ```
 Then use it in html
 
-```angular2html
+```html
 <g2 [data]="data" 
     [width]="width"
     [height]="height"
