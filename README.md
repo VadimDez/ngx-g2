@@ -58,6 +58,19 @@ Then use it in html
 ></g2>
 ```
 
+### Attributes
+
+| Name | Type | Description |
+| --- | --- | --- |
+| [data] | Array | chart data |
+| [titles]| Object | chart titles |
+| [width]| number | chart width |
+| [height]| number | chart height |
+| [plotCfg]| Object | chart config |
+| [forceFit]| boolean | fit width to parent element |
+| (configure)| Function | callback to configure chart |
+
+
 ## License
 
 [MIT](https://tldrlegal.com/license/mit-license) © [Vadym Yatsyuk](https://github.com/vadimdez)
