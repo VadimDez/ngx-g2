@@ -1,5 +1,7 @@
 # G2 Component for Angular >= 2
 
+<img width="500" src="https://cloud.githubusercontent.com/assets/3748453/24840899/3a926fbe-1d77-11e7-910f-a9673cb754fa.png"/>
+
 ### Install
 
 ```
