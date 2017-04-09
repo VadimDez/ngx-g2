@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   data: any = [
@@ -27,7 +27,7 @@ export class AppComponent {
   plotCfg: any = {
     margin: [10, 100, 50, 120],
   };
-  forceFit: boolean = true;
+  forceFit: boolean = false;
 
   configure(chart: any) {
     chart.interval().position('genre*sold').color('genre');

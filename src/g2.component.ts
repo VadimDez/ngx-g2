@@ -1,21 +1,22 @@
 /**
  * Created by vadimdez on 27/03/2017.
  */
-import { AfterViewInit, Component, Input } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
 import G2 from 'g2';
 
 @Component({
   selector: 'g2',
-  templateUrl: 'g2.component.html',
-  styleUrls: ['g2.component.scss']
+  template: `<div [id]="chartId"></div>`
 })
 
 export class G2Component implements AfterViewInit {
   @Input() data: any;
+  @Input() titles: any;
   @Input() width: number = 600;
   @Input() height: number = 300;
   @Input() plotCfg: any = {};
   @Input() forceFit: boolean = false;
+  @Output() configure = new EventEmitter();
 
   chart: any = null;
   chartId: string = `ngx-g2-${ (new Date()).getTime() }`;
@@ -29,8 +30,10 @@ export class G2Component implements AfterViewInit {
       forceFit: this.forceFit
     });
 
-    this.chart.source(...this.data);
-    this.chart.interval().position('genre*sold').color('genre');
+    this.chart.source(this.data, this.titles);
+
+    this.configure.emit(this.chart);
+
     this.chart.render();
   }
 }

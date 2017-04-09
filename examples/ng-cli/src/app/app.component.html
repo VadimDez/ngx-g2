@@ -1,12 +1,20 @@
-<h1>
-  G2 Component for Angular >= 2
-</h1>
+<header>
+  <h1>
+    G2 Component for Angular >= 2
+  </h1>
+</header>
 
-<g2 [data]="data"
-    [titles]="titles"
-    [width]="width"
-    [height]="height"
-    [plotCfg]="plotCfg"
-    [forceFit]="forceFit"
-    (configure)="configure($event)"
-></g2>
+<section>
+  <p>
+    See documentation on <a href="https://github.com/VadimDez/ngx-g2">https://github.com/VadimDez/ngx-g2</a>.
+  </p>
+
+  <g2 [data]="data"
+      [titles]="titles"
+      [width]="width"
+      [height]="height"
+      [plotCfg]="plotCfg"
+      [forceFit]="forceFit"
+      (configure)="configure($event)"
+  ></g2>
+</section>

@@ -1,0 +1,19 @@
+header {
+    background-color: #6890d4;
+    color: #fff;
+    padding: 10px;
+
+    h1 {
+        margin: 0;
+        font-size: 28px;
+    }
+}
+
+:host {
+    > header h1,
+    > section {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
