@@ -1,10 +1,14 @@
 {
   "name": "ngx-g2",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "g2 component for angular",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ngc -p tsconfig.json"
   },
   "peerDependencies": {
     "@angular/core": ">=2.0.0",
@@ -16,5 +20,19 @@
     "g2-component"
   ],
   "author": "Vadym Yatsyuk <vadym.yatsyuk@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VadimDez/ng2-order-pipe/issues"
+  },
+  "homepage": "https://github.com/VadimDez/ng2-order-pipe#readme",
+  "devDependencies": {
+    "@angular/compiler": "^4.0.1",
+    "@angular/compiler-cli": "^4.0.1",
+    "@angular/core": "^4.0.1",
+    "@types/core-js": "0.9.35",
+    "g2": "^2.2.6",
+    "rxjs": "^5.3.0",
+    "typescript": "^2.2.2",
+    "zone.js": "^0.8.5"
+  }
 }
