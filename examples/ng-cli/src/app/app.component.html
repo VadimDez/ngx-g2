@@ -2,4 +2,11 @@
   G2 Component for Angular >= 2
 </h1>
 
-<g2 [data]="data" [width]="width" [height]="height" [plotCfg]="plotCfg" [forceFit]="forceFit"></g2>
+<g2 [data]="data"
+    [titles]="titles"
+    [width]="width"
+    [height]="height"
+    [plotCfg]="plotCfg"
+    [forceFit]="forceFit"
+    (configure)="configure($event)"
+></g2>
