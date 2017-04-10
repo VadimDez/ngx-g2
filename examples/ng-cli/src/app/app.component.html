@@ -18,16 +18,31 @@
       (configure)="configure($event)"
   ></g2>
 
-  <h3>
-    [forceFit]
-  </h3>
-  <p>Fit to parents width</p>
-  <label>
-    <input type="radio" [value]="true" [(ngModel)]="forceFit">
-    true
-  </label>
-  <label>
-    <input type="radio" [value]="false" [(ngModel)]="forceFit">
-    false
-  </label>
+  <section>
+    <h3>
+      [forceFit]
+    </h3>
+    <p>Fit to parents width</p>
+    <label>
+      <input type="radio" [value]="true" [(ngModel)]="forceFit">
+      true
+    </label>
+    <label>
+      <input type="radio" [value]="false" [(ngModel)]="forceFit">
+      false
+    </label>
+  </section>
+
+
+  <section *ngIf="!forceFit">
+    <h3>
+      [width]
+    </h3>
+    <input type="number" [(ngModel)]="width" placeholder="[width]">
+
+    <h3>
+      [height]
+    </h3>
+    <input type="number" [(ngModel)]="height" placeholder="[height]">
+  </section>
 </section>
