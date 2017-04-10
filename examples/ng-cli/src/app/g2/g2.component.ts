@@ -1,7 +1,7 @@
 /**
  * Created by vadimdez on 27/03/2017.
  */
-import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import G2 from 'g2';
 
 @Component({
@@ -9,7 +9,7 @@ import G2 from 'g2';
   template: `<div [id]="chartId"></div>`
 })
 
-export class G2Component implements AfterViewInit {
+export class G2Component implements AfterViewInit, OnChanges {
   @Input() data: any;
   @Input() titles: any;
   @Input() width: number = 600;
@@ -22,6 +22,31 @@ export class G2Component implements AfterViewInit {
   chartId: string = `ngx-g2-${ (new Date()).getTime() }`;
 
   ngAfterViewInit() {
+    this.initChart();
+  }
+
+  /**
+   * On updates
+   * @param changes
+   */
+  ngOnChanges(changes: SimpleChanges) {
+    if (!this.chart) {
+      return;
+    }
+
+    if ('forceFit' in changes) {
+      if (this.forceFit) {
+        this.chart.forceFit();
+      } else {
+        this.chart.changeSize(this.width, this.height);
+      }
+    }
+  }
+
+  /**
+   * Initialize chart with data
+   */
+  initChart() {
     this.chart = new G2.Chart({
       id: this.chartId,
       width: this.width,
