@@ -21,7 +21,7 @@ module.exports = module.exports.toString();
 /***/ 139:
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n  <h1>\n    G2 Component for Angular >= 2\n  </h1>\n</header>\n\n<section>\n  <p>\n    See documentation on <a href=\"https://github.com/VadimDez/ngx-g2\">https://github.com/VadimDez/ngx-g2</a>.\n  </p>\n\n  <g2 [data]=\"data\"\n      [titles]=\"titles\"\n      [width]=\"width\"\n      [height]=\"height\"\n      [plotCfg]=\"plotCfg\"\n      [forceFit]=\"forceFit\"\n      (configure)=\"configure($event)\"\n  ></g2>\n</section>\n"
+module.exports = "<header>\n  <h1>\n    G2 Component for Angular >= 2\n  </h1>\n</header>\n\n<section>\n  <p>\n    See documentation on <a href=\"https://github.com/VadimDez/ngx-g2\">https://github.com/VadimDez/ngx-g2</a>.\n  </p>\n\n  <g2 [data]=\"data\"\n      [titles]=\"titles\"\n      [width]=\"width\"\n      [height]=\"height\"\n      [plotCfg]=\"plotCfg\"\n      [forceFit]=\"forceFit\"\n      (configure)=\"configure($event)\"\n  ></g2>\n\n  <h3>\n    [forceFit]\n  </h3>\n  <p>Fit to parents width</p>\n  <label>\n    <input type=\"radio\" [value]=\"true\" [(ngModel)]=\"forceFit\">\n    true\n  </label>\n  <label>\n    <input type=\"radio\" [value]=\"false\" [(ngModel)]=\"forceFit\">\n    false\n  </label>\n</section>\n"
 
 /***/ }),
 
@@ -203,6 +203,29 @@ var G2Component = (function () {
         this.chartId = "ngx-g2-" + (new Date()).getTime();
     }
     G2Component.prototype.ngAfterViewInit = function () {
+        this.initChart();
+    };
+    /**
+     * On updates
+     * @param changes
+     */
+    G2Component.prototype.ngOnChanges = function (changes) {
+        if (!this.chart) {
+            return;
+        }
+        if ('forceFit' in changes) {
+            if (this.forceFit) {
+                this.chart.forceFit();
+            }
+            else {
+                this.chart.changeSize(this.width, this.height);
+            }
+        }
+    };
+    /**
+     * Initialize chart with data
+     */
+    G2Component.prototype.initChart = function () {
         this.chart = new __WEBPACK_IMPORTED_MODULE_1_g2___default.a.Chart({
             id: this.chartId,
             width: this.width,
