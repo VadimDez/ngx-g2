@@ -45,6 +45,10 @@ export class G2Component implements AfterViewInit, OnChanges {
     if ('width' in changes || 'height' in changes) {
       this.chart.changeSize(this.width, this.height);
     }
+
+    if ('data' in changes) {
+      this.chart.changeData(this.data)
+    }
   }
 
   /**

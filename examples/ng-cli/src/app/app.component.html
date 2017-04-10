@@ -45,4 +45,15 @@
     </h3>
     <input type="number" [(ngModel)]="height" placeholder="[height]">
   </section>
+
+
+  <section>
+    <h3>
+      [data]
+    </h3>
+    <textarea name="data" rows="10" placeholder="[data]" [value]="getData()" (keyup)="onChange($event)"
+              [class.has-error]="hasDataError"
+    ></textarea>
+    <p *ngIf="hasDataError" class="has-error">JSON is not valid</p>
+  </section>
 </section>

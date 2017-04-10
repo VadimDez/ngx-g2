@@ -1,3 +1,12 @@
+:host {
+    > header h1,
+    > section {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 header {
     background-color: #6890d4;
     color: #fff;
@@ -9,11 +18,15 @@ header {
     }
 }
 
-:host {
-    > header h1,
-    > section {
-        width: 800px;
-        margin-left: auto;
-        margin-right: auto;
+textarea {
+    width: 100%;
+    &.has-error {
+        border-color: red;
+        outline-color: red;
     }
+}
+
+p.has-error {
+    color: red;
+    margin-top: 0;
 }

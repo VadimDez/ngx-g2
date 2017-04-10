@@ -28,8 +28,22 @@ export class AppComponent {
     margin: [10, 100, 50, 120],
   };
   forceFit: boolean = false;
+  hasDataError = false;
 
   configure(chart: any) {
     chart.interval().position('genre*sold').color('genre');
+  }
+
+  getData() {
+    return JSON.stringify(this.data);
+  }
+
+  onChange(data: any) {
+    this.hasDataError = false;
+    try {
+      this.data = JSON.parse(data.target.value);
+    } catch (e) {
+      this.hasDataError = true;
+    }
   }
 }
