@@ -22,7 +22,7 @@
     <h3>
       [forceFit]
     </h3>
-    <p>Fit to parents width</p>
+    <p class="description">Fit to parents width</p>
     <label>
       <input type="radio" [value]="true" [(ngModel)]="forceFit">
       true
@@ -38,22 +38,48 @@
     <h3>
       [width]
     </h3>
+    <p class="description">Chart's width</p>
+
     <input type="number" [(ngModel)]="width" placeholder="[width]">
 
     <h3>
       [height]
     </h3>
+    <p class="description">Chart's height</p>
     <input type="number" [(ngModel)]="height" placeholder="[height]">
   </section>
-
 
   <section>
     <h3>
       [data]
     </h3>
-    <textarea name="data" rows="10" placeholder="[data]" [value]="getData()" (keyup)="onChange($event)"
+    <p class="description">Chart's data</p>
+    <textarea name="data"
+              rows="10"
+              placeholder="[data]"
+              [value]="getAsText(data)"
+              (keyup)="onDataChange($event)"
               [class.has-error]="hasDataError"
     ></textarea>
     <p *ngIf="hasDataError" class="has-error">JSON is not valid</p>
   </section>
+
+  <section>
+    <h3>
+      [plotCfg]
+    </h3>
+    <p class="description">Chart's plot configuration</p>
+    <textarea name="data"
+              rows="10"
+              placeholder="[plotCfg]"
+              [value]="getAsText(plotCfg)"
+              (keyup)="onPlotCfgChange($event)"
+              [class.has-error]="hasPlotCfgError"
+    ></textarea>
+    <p *ngIf="hasPlotCfgError" class="has-error">JSON is not valid</p>
+  </section>
 </section>
+
+<footer>
+  <a href="https://github.com/vadimdez">Vadym Yatsyuk</a>
+</footer>

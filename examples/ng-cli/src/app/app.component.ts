@@ -29,21 +29,31 @@ export class AppComponent {
   };
   forceFit: boolean = false;
   hasDataError = false;
+  hasPlotCfgError = false;
 
   configure(chart: any) {
     chart.interval().position('genre*sold').color('genre');
   }
 
-  getData() {
-    return JSON.stringify(this.data);
+  getAsText(data: any) {
+    return JSON.stringify(data);
   }
 
-  onChange(data: any) {
+  onDataChange(e: any) {
     this.hasDataError = false;
     try {
-      this.data = JSON.parse(data.target.value);
+      this.data = JSON.parse(e.target.value);
     } catch (e) {
       this.hasDataError = true;
+    }
+  }
+
+  onPlotCfgChange(e: any) {
+    this.hasPlotCfgError = false;
+    try {
+      this.plotCfg = JSON.parse(e.target.value);
+    } catch (e) {
+      this.hasPlotCfgError = true;
     }
   }
 }

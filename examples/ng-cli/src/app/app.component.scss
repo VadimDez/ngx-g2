@@ -1,5 +1,5 @@
+@import "../variables";
 :host {
-    > header h1,
     > section {
         width: 800px;
         margin-left: auto;
@@ -8,25 +8,55 @@
 }
 
 header {
-    background-color: #6890d4;
-    color: #fff;
-    padding: 10px;
+    background-color: $primary;
+    color: $primary-contrast;
+    padding: 0 40px;
+    height: 72px;
 
     h1 {
+        line-height: 72px;
         margin: 0;
-        font-size: 28px;
+        font-size: 24px;
+        font-weight: bold;
     }
+}
+
+h3 {
+    margin-top: 40px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid transparentize($primary, .8);
 }
 
 textarea {
     width: 100%;
+    outline-color: $primary;
+
     &.has-error {
-        border-color: red;
-        outline-color: red;
+        border-color: $error;
+        outline-color: $error;
     }
 }
 
 p.has-error {
-    color: red;
+    color: $error;
     margin-top: 0;
+}
+
+p.description {
+    color: $description;
+    font-style: italic;
+    border-left: 3px solid $description;
+    padding-left: 10px;
+}
+
+footer {
+    height: 72px;
+    text-align: center;
+    background-color: $primary;
+    margin-top: 20px;
+
+    a {
+        color: $primary-contrast;
+        line-height: 72px;
+    }
 }
