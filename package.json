@@ -1,6 +1,6 @@
 {
   "name": "ngx-g2",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "g2 component for angular",
   "main": "dist/index.js",
   "files": [

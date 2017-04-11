@@ -49,10 +49,6 @@ export class G2Component implements AfterViewInit, OnChanges {
     if ('data' in changes) {
       this.chart.changeData(this.data)
     }
-
-    // if ('plotCfg' in changes) {
-    //   this.chart.
-    // }
   }
 
   /**
