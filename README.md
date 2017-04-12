@@ -73,6 +73,9 @@ Then use it in html
 | (configure)| Function | callback to configure chart |
 
 
+#### G2 Docs
+[See g2 docs](http://g2.alipay.com/)
+
 ## License
 
 [MIT](https://tldrlegal.com/license/mit-license) © [Vadym Yatsyuk](https://github.com/vadimdez)
